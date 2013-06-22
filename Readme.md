@@ -9,16 +9,16 @@ This is a fork of [PhoneGap LocalNotification](https://github.com/phonegap/phone
 4. Fix the import in AlarmReceiver.java around line 13 to reference your own project instead of mine.
 5. Add the following code to your res/xml/config.xml file within the `<plugins>` tag:
 
-	<plugin name="LocalNotification" value="com.phonegap.plugin.localnotification.LocalNotification" />
+    <plugin name="LocalNotification" value="com.phonegap.plugin.localnotification.LocalNotification" />
 
 6. Add the following fragment in the AndroidManifest.xml inside the <application> tag:
 
-	<receiver android:name="com.phonegap.plugin.localnotification.AlarmReceiver" >
-	</receiver>
-	<receiver android:name="com.phonegap.plugin.localnotification.AlarmRestoreOnBoot" >
-	    <intent-filter>
-	        <action android:name="android.intent.action.BOOT_COMPLETED" />
-	    </intent-filter>
-	</receiver>
+    <receiver android:name="com.phonegap.plugin.localnotification.AlarmReceiver" >
+    </receiver>
+    <receiver android:name="com.phonegap.plugin.localnotification.AlarmRestoreOnBoot" >
+        <intent-filter>
+            <action android:name="android.intent.action.BOOT_COMPLETED" />
+        </intent-filter>
+    </receiver>
 
 Refer to the original project [here](https://github.com/phonegap/phonegap-plugins/tree/master/Android/LocalNotification) for example usage of the plugin.
